@@ -13,8 +13,41 @@
 ## 注記
 
 - 現時点の設定を視覚化した整理用図解
-- 役職名や階級体系は未確定部分があるため、まずは構造と責任範囲の見取り図を優先する
+- 主要ポストは反映したが、細かい階級や呼称差は今後も更新余地がある
 - 細部は今後の議論で更新する前提
+
+## ポスト体系図
+
+```mermaid
+flowchart TB
+    Commander["最高司令官"]
+    Vice["副司令官"]
+    Inspectors["総監級（技術総監など）"]
+    Bureau["局長級"]
+    Fleet["艦隊司令"]
+    Group["機動群司令兼母艦艦長"]
+    Captains["各艦艦長"]
+    Chiefs["主任"]
+    Leads["担当官"]
+    Executors["執行官"]
+    SpecialAdvice["現場特任諮問官 / 特別助言存在"]
+    SpecialExec["特別執行官"]
+
+    Commander --> Vice
+    Commander --> Inspectors
+    Commander --> Bureau
+    Commander --> Fleet
+
+    Fleet --> Group
+    Fleet --> Captains
+    Group --> Chiefs
+    Captains --> Chiefs
+    Chiefs --> Leads
+    Leads --> Executors
+
+    Commander -. "諮問" .-> SpecialAdvice
+    Commander -. "目標のみ付与" .-> SpecialExec
+```
 
 ## 中枢部組織図
 
@@ -171,6 +204,7 @@ flowchart TB
 ## 読み方メモ
 
 - `中枢部組織図` は、最高司令官直下で何がぶら下がるかを見る図
+- `ポスト体系図` は、役職・ポストの大まかな段差を見る図
 - `艦隊編成図` は、旗艦、機動群、整備群の三層を見る図
 - `母艦内部署図` は、母艦が `動く基地` としてどう回るかを見る図
-- 今後 `役職・階級体系` が固まったら、この図の各ノードへ肩書を追記できる
+- 細かい階級制度は今後固めるが、現時点でもポスト間の責任範囲は追えるようにしてある
