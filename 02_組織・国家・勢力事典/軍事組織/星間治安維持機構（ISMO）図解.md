@@ -47,6 +47,10 @@ flowchart TB
 
     Commander -. "諮問" .-> SpecialAdvice
     Commander -. "目標のみ付与" .-> SpecialExec
+    Legal["法務・規約審査局"]
+    Internal["監察・内部統制局"]
+    Legal -. "制度で囲う" .-> SpecialExec
+    Internal -. "事後監査" .-> SpecialExec
 ```
 
 ## 中枢部組織図
